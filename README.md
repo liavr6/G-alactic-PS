@@ -18,7 +18,7 @@ A Python project using Celestia to estimate the galactic position based on a sta
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/username/G(alactic)PS.git
-   cd galactic-position-estimator
+   cd G(alactic)PS
    ```
 
 2. **Install dependencies**:
