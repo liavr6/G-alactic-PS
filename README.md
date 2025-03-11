@@ -63,6 +63,3 @@ Ensure you have:
 - Implement real-time star tracking.
 - Extend compatibility for different astronomical datasets.
 
-## License
-This project is licensed under the MIT License.
-
