@@ -1,7 +1,12 @@
 # Galactic Positioning System (G-PS)
 ## Preview
 
-![GPS Visualization](img/gpsv.mp4)
+## Preview
+
+<video width="600" controls>
+  <source src="img/gpsv.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ## Overview
 **Galactic Positioning System (G-PS)** is a Python-based astronomical navigation system that estimates an observer's position in space by comparing simulated star field images with actual sky images. It utilizes Gaia star data and advanced image similarity techniques to determine the most likely location and orientation of the observer in a 3D star map.
