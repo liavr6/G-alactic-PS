@@ -1,8 +1,4 @@
 # Galactic Positioning System (G-PS)
-## Preview
-
-## Preview
-
 <video width="600" controls>
   <source src="img/gpsv.mp4" type="video/mp4">
   Your browser does not support the video tag.
