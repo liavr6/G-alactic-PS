@@ -45,6 +45,7 @@ python galactic_positioning.py
 ```
 Ensure you have:
 - A Gaia star catalog CSV file (e.g., `dataGaia.csv`)
+- A real star field image (e.g., `test1-celestia.png`)
 
 ## Example Output
 - **Estimated Position:** `[x, y, z]` (light-years from reference point)
@@ -57,9 +58,6 @@ Ensure you have:
 - Optimize the image comparison algorithm.
 - Implement real-time star tracking.
 - Extend compatibility for different astronomical datasets.
-
-## Credits
-Developed by me as part of a cutting-edge space navigation project.
 
 ## License
 This project is licensed under the MIT License.
