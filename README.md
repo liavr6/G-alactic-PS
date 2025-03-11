@@ -1,5 +1,7 @@
 # Galactic Positioning System (G-PS)
-![GPS Visualization](img/gpsv.gif)
+<p align="center">
+  <img src="img/gpsv.gif" alt="GPSV Animation">
+</p>
 
 
 ## Overview
