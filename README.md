@@ -1,61 +1,66 @@
-# G(alactic)PS
+# Galactic Positioning System (G-PS)
 
-A Python project using Celestia to estimate the galactic position based on a starfield image. This project simulates starfield images at various galactic coordinates and compares them with an input image to determine the most likely position in the galaxy.
+## Overview
+**Galactic Positioning System (G-PS)** is a Python-based astronomical navigation system that estimates an observer's position in space by comparing simulated star field images with actual sky images. It utilizes Gaia star data and advanced image similarity techniques to determine the most likely location and orientation of the observer in a 3D star map.
 
 ## Features
-- **Starfield Simulation**: Uses Celestia to capture images of the galaxy at different coordinates.
-- **Image Comparison**: Matches the input starfield image to simulated images to estimate the galactic position.
-- **Refinement Process**: Conducts a second round of simulation around the initial best match to refine the estimated location.
-- **Python Integration**: Entire process controlled through Python scripts.
+- **Star Data Processing:** Loads and processes real astronomical data from the Gaia mission.
+- **Simulated Sky Imaging:** Generates star field projections based on different observer locations and orientations.
+- **Image Comparison:** Uses structural similarity analysis (SSIM) to match a real sky image with simulated star maps.
+- **Position Estimation:** Identifies the best-matching observer position based on the closest star field match.
+- **3D Visualization:** Interactive 3D visualization of estimated positions, stars, and orientation vectors using Plotly.
 
-## Requirements
-- Python 3.x
-- OpenCV
-- Celestia
-- NumPy
+## Dependencies
+Ensure you have the following Python libraries installed:
 
-## Installation
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/username/G(alactic)PS.git
-   cd G(alactic)PS
-   ```
+```bash
+pip install numpy pandas matplotlib scikit-image scipy pillow plotly
+```
 
-2. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## How It Works
+1. **Load Star Data:**
+   - Reads a Gaia star catalog CSV file and extracts celestial coordinates (RA, DEC, distance).
+   - Converts celestial coordinates into a 3D cartesian representation.
 
-3. **Install Celestia**:
-   Follow the instructions on the [Celestia website](https://celestia.space) to install Celestia.
+2. **Generate Simulated Star Images:**
+   - Computes the observer's view based on predefined locations and orientations.
+   - Projects the star positions onto a 2D plane to mimic what an observer sees.
+
+3. **Process Real Sky Image:**
+   - Loads a real sky image, converts it to grayscale, and extracts bright spots (stars).
+
+4. **Compare Simulated vs. Real Images:**
+   - Measures similarity using SSIM to find the closest match.
+
+5. **Estimate Position & Orientation:**
+   - Outputs the estimated position and viewing direction in space.
+
+6. **Visualize in 3D:**
+   - Displays a 3D scatter plot of star positions, the estimated observer location, Earth, and the observer’s look vector.
 
 ## Usage
-1. **Prepare the input image**: Place your starfield image as `input_starfield.jpg` in the project directory.
-2. **Run the main script**:
-   ```bash
-   python main.py
-   ```
-3. **View results**: The script will output the estimated galactic longitude and latitude. It will also generate directories with simulated starfield images.
+Modify the file paths as needed and run the script:
+```bash
+python galactic_positioning.py
+```
+Ensure you have:
+- A Gaia star catalog CSV file (e.g., `dataGaia.csv`)
 
-## Project Structure
-- `main.py`: The main script that orchestrates the simulation and comparison process.
-- `celestia_control.py`: Controls Celestia to capture starfield images at specified coordinates.
-- `image_comparison.py`: Handles the loading and comparison of images to find the best match.
-- `requirements.txt`: Lists the Python dependencies required for the project.
+## Example Output
+- **Estimated Position:** `[x, y, z]` (light-years from reference point)
+- **Estimated Orientation:** `[yaw, pitch, roll]` (degrees)
+- **Best Match Index & Similarity Score**
+- **3D Plot of the Estimated Position and Look Vector**
 
-## Roadmap
-1. **Initial Simulation**: Capture a coarse grid of starfield images across the galaxy.
-2. **Image Comparison**: Compare the input image to the simulated images to find the best match.
-3. **Refinement Simulation**: Capture a finer grid of images around the initial best match.
-4. **Final Comparison**: Refine the location estimate using the refined images.
+## Future Improvements
+- Expand to include more precise galactic coordinates.
+- Optimize the image comparison algorithm.
+- Implement real-time star tracking.
+- Extend compatibility for different astronomical datasets.
 
-## Future Enhancements
-- **Machine Learning Integration**: Incorporate machine learning to improve matching accuracy and efficiency.
-- **GUI Development**: Create a graphical user interface for easier interaction with the program.
-
-## Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests for improvements and bug fixes.
+## Credits
+Developed by me as part of a cutting-edge space navigation project.
 
 ## License
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License.
 
