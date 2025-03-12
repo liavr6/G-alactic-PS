@@ -44,7 +44,7 @@ pip install numpy pandas matplotlib scikit-image scipy pillow plotly
 ## Understanding the Geometry of Star Projection
 The process of projecting a 3D star position onto a 2D plane follows the principles of perspective projection. Given a star's 3D coordinates `(x, y, z)`, the 2D projected coordinates `(x', y')` are calculated as:
 ```math
-\[ x' = \frac{x}{z}, \quad y' = \frac{y}{z} \]
+ x' = \frac{x}{z}, \quad y' = \frac{y}{z} 
 ```
 ### Explanation:
 - The observer's viewpoint is positioned at the origin, looking along the z-axis.
