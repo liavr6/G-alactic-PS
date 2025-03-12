@@ -164,6 +164,7 @@ def main():
     ))
     
     title_text = "3D Star Positions from Gaia Data (With Estimated Position, Earth, and Look Vector)"
+
     fig.update_layout(
         title=title_text,
         scene=dict(
@@ -174,6 +175,13 @@ def main():
         ),
         template='plotly_dark'
     )
+        # Add match information as a subtitle
+    subtitle_text = f"Best match index: {best_match_idx}, Similarity: {similarity:.6f} | " \
+                    f"Estimated Position: {estimated_position.tolist()} | " \
+                    f"Estimated Orientation: {estimated_orientation.tolist()}"
+
+    fig.update_layout(title_text=title_text + "<br><sup>" + subtitle_text + "</sup>")
+
     fig.show()
 
 if __name__ == "__main__":
