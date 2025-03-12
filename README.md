@@ -3,7 +3,6 @@
   <img src="img/gpsv.gif" alt="GPSV Animation">
 </p>
 
-
 ## Overview
 **Galactic Positioning System (G-PS)** is a Python-based astronomical navigation system that estimates an observer's position in space by comparing simulated star field images with actual sky images. It utilizes Gaia star data and advanced image similarity techniques to determine the most likely location and orientation of the observer in a 3D star map.
 
@@ -42,6 +41,21 @@ pip install numpy pandas matplotlib scikit-image scipy pillow plotly
 6. **Visualize in 3D:**
    - Displays a 3D scatter plot of star positions, the estimated observer location, Earth, and the observer’s look vector.
 
+## Understanding the Geometry of Star Projection
+The process of projecting a 3D star position onto a 2D plane follows the principles of perspective projection. Given a star's 3D coordinates `(x, y, z)`, the 2D projected coordinates `(x', y')` are calculated as:
+
+\[ x' = \frac{x}{z}, \quad y' = \frac{y}{z} \]
+
+### Explanation:
+- The observer's viewpoint is positioned at the origin, looking along the z-axis.
+- As light from distant stars enters the observer's view, the stars appear on a virtual 2D image plane perpendicular to the viewing direction.
+- The transformation formulas above ensure that stars further away (larger `z`) appear closer to the center, maintaining correct depth perception.
+- This technique is fundamental to rendering celestial objects in astronomy software, planetariums, and navigation systems like G-PS.
+
+<p align="center">
+  <img src="img/3d2d.png" alt="3D to 2D Projection">
+</p>
+
 ## Usage
 Modify the file paths as needed and run the script:
 ```bash
@@ -62,4 +76,3 @@ Ensure you have:
 - Optimize the image comparison algorithm.
 - Implement real-time star tracking.
 - Extend compatibility for different astronomical datasets.
-
